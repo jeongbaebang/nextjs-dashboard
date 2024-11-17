@@ -93,9 +93,9 @@ async function seedRevenue() {
       (rev) => client.sql`
         INSERT INTO revenue (month, revenue)
         VALUES (${rev.month}, ${rev.revenue})
-        ON CONFLICT (month) DO NOTHING;
-      `,
-    ),
+        ON CONFLICT (month) DO NOPOSTGRES_URLTHING;
+      `
+    )
   );
 
   return insertedRevenue;
